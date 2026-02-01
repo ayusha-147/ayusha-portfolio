@@ -2,157 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ayusha Pradhananga | QA Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <div class="container nav">
-    <h2 class="logo">Ayusha</h2>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</header>
-
 <!-- HERO -->
 <section class="hero">
-  <div class="container hero-content">
+  <div class="hero-box">
     <h1>Ayusha Pradhananga</h1>
-    <p class="role">QA Trainee · B.Sc. CSIT Undergraduate</p>
-    <p class="hero-text">
-      Detail-oriented CSIT student with hands-on exposure to manual testing,
-      test case design, and Agile QA practices.
+    <p class="hero-role">QA Trainee · B.Sc. CSIT Undergraduate</p>
+    <p class="hero-desc">
+      Passionate about software quality, manual testing, and structured QA
+      processes. Actively building real-world testing experience.
     </p>
-    <a href="#projects" class="btn-primary">View Projects</a>
+    <a href="#projects" class="hero-btn">View My Work</a>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
-    <h2>About Me</h2>
-    <p class="section-text">
-      I am a motivated B.Sc. CSIT undergraduate with foundational experience in
-      software testing and quality assurance. I enjoy structured work,
-      attention to detail, and collaborating with teams to improve software quality.
-    </p>
-  </div>
+<section class="section">
+  <h2>About Me</h2>
+  <p class="center-text">
+    I am a B.Sc. CSIT undergraduate with a strong interest in software testing
+    and quality assurance. I enjoy detail-oriented work and collaborating with
+    teams to ensure reliable and user-friendly software.
+  </p>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="section bg-light">
-  <div class="container">
-    <h2>Skills</h2>
+<section class="section bg">
+  <h2>Skills</h2>
 
-    <div class="grid-3">
-      <div class="card">
-        <h3>QA & Testing</h3>
-        <ul>
-          <li>Manual Testing</li>
-          <li>Test Case Design</li>
-          <li>Bug Reporting (JIRA)</li>
-          <li>Agile Fundamentals</li>
-        </ul>
-      </div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>QA & Testing</h3>
+      <ul>
+        <li>Manual Testing</li>
+        <li>Test Case Design</li>
+        <li>Bug Reporting (JIRA)</li>
+        <li>Agile Fundamentals</li>
+      </ul>
+    </div>
 
-      <div class="card">
-        <h3>Technical</h3>
-        <ul>
-          <li>JavaScript</li>
-          <li>C / C++</li>
-          <li>Python</li>
-        </ul>
-      </div>
+    <div class="card">
+      <h3>Technical</h3>
+      <ul>
+        <li>JavaScript</li>
+        <li>C / C++</li>
+        <li>Python</li>
+      </ul>
+    </div>
 
-      <div class="card">
-        <h3>Soft Skills</h3>
-        <ul>
-          <li>Communication</li>
-          <li>Adaptability</li>
-          <li>Team Collaboration</li>
-        </ul>
-      </div>
+    <div class="card">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Communication</li>
+        <li>Adaptability</li>
+        <li>Team Collaboration</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="section">
-  <div class="container">
-    <h2>Experience</h2>
+<section class="section">
+  <h2>Experience</h2>
 
-    <div class="card">
+  <div class="timeline">
+    <div class="timeline-card">
       <h3>QA Foundations Training – Leapfrog Connect</h3>
-      <span class="muted">Dec 2025 – Present</span>
-      <ul>
-        <li>Manual testing and QA fundamentals</li>
-        <li>Test planning and defect reporting</li>
-        <li>Agile QA workflows</li>
-      </ul>
+      <span>Dec 2025 – Present</span>
+      <p>Hands-on training in manual testing, test planning, and Agile QA workflows.</p>
     </div>
 
-    <div class="card">
+    <div class="timeline-card">
       <h3>Project Support Trainee – Digischool Global</h3>
-      <span class="muted">Jun 2025 – Jan 2026</span>
-      <ul>
-        <li>Supported AI and IoT workshops</li>
-        <li>Assisted in digital learning initiatives</li>
-      </ul>
+      <span>Jun 2025 – Jan 2026</span>
+      <p>Supported workshops on AI and IoT and assisted digital learning initiatives.</p>
     </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="section bg-light">
-  <div class="container">
-    <h2>Projects</h2>
+<section id="projects" class="section bg">
+  <h2>Projects</h2>
 
-    <div class="grid-2">
-      <div class="card">
-        <h3>Vyaguta HR Management System</h3>
-        <p class="section-text">
-          Manual testing project including test plan creation
-          and detailed test case documentation.
-        </p>
-        <a href="#" class="link">View Test Plan</a><br>
-        <a href="#" class="link">View Test Cases</a>
-      </div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Vyaguta HR Management System</h3>
+      <p>Manual testing project including test plan and structured test cases.</p>
+      <a href="#">View Test Plan</a><br>
+      <a href="#">View Test Cases</a>
+    </div>
 
-      <div class="card">
-        <h3>QA Beginners Course</h3>
-        <p class="section-text">
-          Structured QA training covering testing fundamentals and Agile practices.
-        </p>
-        <a href="https://leapfrogconnect.co/courses/qa-beginners-course/" class="link">
-          View Course
-        </a>
-      </div>
+    <div class="card">
+      <h3>QA Beginners Course</h3>
+      <p>Structured QA training covering testing fundamentals.</p>
+      <a href="https://leapfrogconnect.co/courses/qa-beginners-course/">View Course</a>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:ayusha.p.2003@gmail.com">ayusha.p.2003@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/ayusha-pradhananga">linkedin.com/in/ayusha-pradhananga</a></p>
-  </div>
+<section class="section">
+  <h2>Contact</h2>
+  <p class="center-text">
+    📧 ayusha.p.2003@gmail.com <br>
+    🔗 linkedin.com/in/ayusha-pradhananga
+  </p>
 </section>
 
 <footer>
-  <p>© 2026 Ayusha Pradhananga</p>
+  © 2026 Ayusha Pradhananga
 </footer>
 
 </body>
 </html>
-
