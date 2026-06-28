@@ -4,95 +4,294 @@
   <meta charset="UTF-8">
   <title>Ayusha Pradhananga | QA Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ayusha Pradhananga — Junior QA Engineer with hands-on experience in manual testing, structured test design, and defect documentation.">
 
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<div class="atmosphere" id="atmosphere" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<nav>
+  <div class="logo">AP.</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <button id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="toggle-track">
+        <span class="toggle-thumb"></span>
+      </span>
+    </button>
+    <a class="btn-pill" href="#contact">Hire me</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-horizon" aria-hidden="true">
+    <span data-speed="0.04"></span>
+    <span data-speed="0.08"></span>
+    <span data-speed="0.12"></span>
+  </div>
   <div class="hero-text">
+    <span class="eyebrow">Junior QA Engineer · Manual Testing</span>
     <h1>my QA journey</h1>
-    <p class="subtitle">
-      learning · testing · growing
-    </p>
+    <p class="subtitle">precise testing · clear reporting · continuous learning</p>
     <p class="desc">
-      I’m Ayusha, a B.Sc. CSIT undergraduate building a strong foundation
-      in software quality assurance through hands-on practice and structured learning.
+      I'm Ayusha, a B.Sc. CSIT graduate working as a QA engineer with hands-on
+      experience in manual testing, structured test design, and defect
+      documentation across real and practice projects.
     </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#projects">View Work</a>
+      <a class="btn btn-outline" href="#contact">Contact Me</a>
+    </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="split bg-accent">
-  <div>
-    <h2>about me</h2>
-    <p>
-      I enjoy understanding systems deeply, finding edge cases,
-      and ensuring software works the way users expect it to.
-      My focus is currently on manual testing and QA fundamentals.
-    </p>
-  </div>
-  <div class="highlight-box">
-    <p>
-      🎓 B.Sc. CSIT  
-      <br>🧪 QA Trainee  
-      <br>📍 Nepal
-    </p>
+<section class="about" id="about">
+  <span class="section-label">About Me</span>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        My instinct is to question assumptions. When everyone else is thinking
+        about what should happen, I'm thinking about what <strong>could</strong> go wrong —
+        and documenting it clearly enough that it actually gets fixed.
+      </p>
+      <p>
+        I work through the QA process end-to-end: analyzing requirements,
+        designing structured test cases, executing manual and exploratory
+        testing, and logging defects with full reproducibility so developers
+        can act on them immediately.
+      </p>
+      <p>
+        Through Leapfrog Connect's QA Foundations training, I've practiced this
+        process on real platforms — including API testing with Postman and
+        UI automation concepts with Cypress.
+      </p>
+      <p>
+        As a CS student I also understand how software is constructed, which
+        makes me a sharper tester — I know where the likely failure points are
+        before I even open the app.
+      </p>
+
+      <div class="learning-tags">
+        <span class="tags-label">Core skills</span>
+        <div class="tag-row">
+          <span class="pill">Manual Testing</span>
+          <span class="pill">Test Case Design</span>
+          <span class="pill">JIRA</span>
+          <span class="pill">Postman</span>
+          <span class="pill">Cypress</span>
+          <span class="pill">Agile / Scrum</span>
+          <span class="pill">SDLC &amp; STLC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-cards">
+      <div class="info-card reveal">
+        <span class="info-icon">🎓</span>
+        <h3>B.Sc. Computer Science &amp; IT</h3>
+        <p>Undergraduate student</p>
+      </div>
+      <div class="info-card reveal">
+        <span class="info-icon">🧪</span>
+        <h3>Junior QA Engineer</h3>
+        <p>QA Foundations Training — Leapfrog Connect</p>
+      </div>
+      <div class="info-card reveal">
+        <span class="info-icon">📍</span>
+        <h3>Kathmandu, Nepal</h3>
+        <p>Available for remote work</p>
+      </div>
+      <div class="info-card reveal">
+        <span class="info-icon">⚡</span>
+        <h3>Automation &amp; AI Tools</h3>
+        <p>Cypress · Postman · JMeter</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section class="guide">
-  <h2>what I’m building</h2>
+<section class="skills" id="skills">
+  <span class="section-label">Skills &amp; Tools</span>
+  <h2>what I bring to a team</h2>
+  <p class="skills-intro">Comfortable owning a feature's test cycle from requirement review to sign-off.</p>
 
-  <div class="guide-item">
-    <span class="tag">testing</span>
-    <p>Manual testing, test case design, bug reporting (JIRA), SDLC & STLC</p>
-  </div>
-
-  <div class="guide-item">
-    <span class="tag">tools</span>
-    <p>JIRA, GitHub, basic SQL, test documentation</p>
-  </div>
-
-  <div class="guide-item">
-    <span class="tag">tech</span>
-    <p>JavaScript, Python, C/C++ fundamentals</p>
+  <div class="skill-columns">
+    <div class="skill-col">
+      <span class="col-num">01</span>
+      <h3>Testing</h3>
+      <p class="col-desc">Core QA discipline — the heart of the work.</p>
+      <ul>
+        <li>Manual Testing</li>
+        <li>Exploratory Testing</li>
+        <li>Regression Testing</li>
+        <li>Test Case Design</li>
+        <li>Bug Reporting</li>
+        <li>SDLC &amp; STLC</li>
+      </ul>
+    </div>
+    <div class="skill-col">
+      <span class="col-num">02</span>
+      <h3>Tools</h3>
+      <p class="col-desc">Industry tools for tracking, reporting, and collaboration.</p>
+      <ul>
+        <li>JIRA</li>
+        <li>GitHub</li>
+        <li>Test Documentation</li>
+        <li>Agile / Scrum</li>
+      </ul>
+    </div>
+    <div class="skill-col">
+      <span class="col-num">03</span>
+      <h3>Development</h3>
+      <p class="col-desc">Technical foundation that sharpens how I test.</p>
+      <ul>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>C / C++</li>
+        <li>HTML &amp; CSS</li>
+        <li>Git basics</li>
+      </ul>
+    </div>
+    <div class="skill-col skill-col-accent reveal">
+      <span class="col-num">04</span>
+      <h3>Automation</h3>
+      <p class="col-desc">Hands-on exposure through QA training and practice projects.</p>
+      <ul>
+        <li>Cypress (UI automation)</li>
+        <li>Postman (API testing)</li>
+        <li>JMeter (performance testing)</li>
+        <li>AI-assisted QA tooling</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- PROJECT -->
-<section class="split bg-main">
-  <div>
-    <h2>featured work</h2>
-    <p>
-      <strong>Vyaguta HR Management System</strong><br>
-      Manual QA project including test plan, test cases,
-      and structured defect documentation.
-    </p>
-    <a class="link" href="#">view project →</a>
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <span class="section-label">Projects</span>
+  <h2>featured work</h2>
+
+  <div class="project-card featured reveal">
+    <div class="project-info">
+      <span class="project-tagline">Manual QA · Defect Reporting</span>
+      <h3>Vyaguta HR Management System</h3>
+      <p>
+        <strong>Objective:</strong> validate core HR workflows — employee onboarding,
+        leave management, and payroll — before release.
+      </p>
+      <p>
+        <strong>Approach:</strong> reviewed requirements, designed 40+ structured
+        test cases with a requirement-traceability mindset, then executed manual
+        and exploratory testing passes.
+      </p>
+      <p>
+        <strong>Outcome:</strong> logged defects in JIRA with full severity/priority
+        classification and reproduction steps, giving developers everything needed
+        to act without follow-up questions.
+      </p>
+      <a class="link" href="#">View project →</a>
+    </div>
+    <div class="project-deliverables">
+      <span class="deliverables-label">Deliverables</span>
+      <ul>
+        <li>Test Plan</li>
+        <li>40+ Test Cases</li>
+        <li>Defect Report</li>
+        <li>JIRA Tracking</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="image-placeholder">
-    project preview
+  <div class="project-grid">
+    <div class="project-card reveal">
+      <span class="project-tagline">UI Automation · API &amp; Performance Testing</span>
+      <h3>Rahul Shetty Automation Practice</h3>
+      <p>
+        Practiced automation fundamentals through structured exercises:
+        executed UI test cases with Cypress, performed API testing with Postman,
+        and explored performance testing concepts using JMeter.
+      </p>
+      <div class="tag-row">
+        <span class="pill">Cypress</span>
+        <span class="pill">Postman</span>
+        <span class="pill">JMeter</span>
+      </div>
+    </div>
+    <div class="project-card mock reveal">
+      <span class="mock-badge">sample · placeholder</span>
+      <span class="project-tagline">Functional · Security Basics</span>
+      <h3>Login &amp; Authentication Module</h3>
+      <p>
+        Systematic test suite for a login module: valid/invalid credentials,
+        boundary values, session persistence, and basic security probes.
+      </p>
+      <div class="tag-row">
+        <span class="pill">Test Cases</span>
+        <span class="pill">Security Checklist</span>
+        <span class="pill">Findings Report</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact">
-  <h2>let’s connect</h2>
-  <p>
-    📧 ayusha.p.2003@gmail.com<br>
-    🔗 linkedin.com/in/ayusha-pradhananga<br>
-    💻 github.com/ayusha-147
-  </p>
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div>
+      <span class="section-label">Contact</span>
+      <h2>let's build something together.</h2>
+      <p>
+        Open to Junior QA Engineer roles — remote or Kathmandu-based. If you're
+        hiring, collaborating, or just want to chat — I'd love to hear from you.
+      </p>
+      <a class="btn btn-primary" href="mailto:ayushapradhananga07@gmail.com">Say hello</a>
+    </div>
+    <div class="contact-links">
+      <span class="tags-label">Find me at</span>
+      <a href="mailto:ayushapradhananga07@gmail.com">
+        <span class="contact-label">Email</span>
+        ayushapradhananga07@gmail.com
+      </a>
+      <a href="https://linkedin.com/in/ayusha-pradhananga" target="_blank" rel="noopener">
+        <span class="contact-label">LinkedIn</span>
+        ayusha-pradhananga
+      </a>
+      <a href="https://github.com/ayusha-147" target="_blank" rel="noopener">
+        <span class="contact-label">GitHub</span>
+        ayusha-147
+      </a>
+    </div>
+  </div>
 </section>
 
 <footer>
-  © 2026 Ayusha Pradhananga
+  <span>© 2026 Ayusha Pradhananga</span>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
 </footer>
 
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
 </body>
 </html>
