@@ -39,7 +39,7 @@
   const progressBar = document.getElementById('scroll-progress');
   const backToTop = document.getElementById('back-to-top');
   const atmosphere = document.getElementById('atmosphere');
-  const horizonLayers = document.querySelectorAll('.hero-horizon span');
+  const horizonLayers = document.querySelectorAll('.hero-horizon span, .footer-horizon span');
 
   function onScroll() {
     const scrollTop = window.scrollY;
@@ -61,6 +61,25 @@
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  /* ACTIVE NAV HIGHLIGHT */
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = Array.from(navLinks)
+    .map(function (link) { return document.querySelector(link.getAttribute('href')); })
+    .filter(Boolean);
+
+  const sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach(function (link) {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+      });
+    });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+
+  sections.forEach(function (section) {
+    sectionObserver.observe(section);
+  });
 
   /* CUSTOM-EASED SCROLL */
   function easeInOutCubic(t) {
