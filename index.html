@@ -1,374 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ayusha Pradhananga | QA Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ayusha Pradhananga — Junior QA Engineer with hands-on experience in manual testing, structured test design, and defect documentation.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ayusha Pradhananga — QA Engineer</title>
+<meta name="description" content="Ayusha Pradhananga — QA engineer in Kathmandu. Manual testing, API testing, and clear defect reporting for teams that ship with confidence." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#171432;
+  --dusk:#2e2154;
+  --plum:#5c3a6e;
+  --mauve:#8a4e73;
+  --coral:#c96a6b;
+  --apricot:#efa76a;
+  --sand:#f6dcaf;
+  --cream:#fbf0dc;
+  --ink-light:#f4ece1;
+  --ink-dim:rgba(244,236,225,.68);
+  --ink-dark:#3a2b4f;
+  --ink-dark-dim:rgba(58,43,79,.72);
+  --pass:#7fc8a9;
+  --display:'Josefin Sans',sans-serif;
+  --body:'Karla',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink-light);background:var(--night);line-height:1.65;font-size:17px;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%}
+::selection{background:var(--apricot);color:var(--night)}
 
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px 5vw;transition:background .4s,backdrop-filter .4s}
+.nav.scrolled{background:rgba(23,20,50,.72);backdrop-filter:blur(12px)}
+.nav .brand{font-family:var(--display);font-weight:600;letter-spacing:.32em;font-size:.95rem;text-decoration:none}
+.nav .links{display:flex;gap:30px;list-style:none}
+.nav .links a{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink-dim);transition:color .25s}
+.nav .links a:hover,.nav .links a:focus-visible{color:var(--sand)}
+.nav .hire{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--night);background:var(--sand);padding:9px 18px;border-radius:999px;transition:transform .25s,background .25s}
+.nav .hire:hover{background:var(--apricot);transform:translateY(-1px)}
+@media(max-width:720px){.nav .links{display:none}}
+
+/* ---------- shared section bits ---------- */
+.section{position:relative;padding:110px 5vw 150px}
+.inner{max-width:1060px;margin:0 auto;position:relative;z-index:2}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dim);display:block;margin-bottom:18px}
+h2{font-family:var(--display);font-weight:300;font-size:clamp(1.9rem,4vw,2.9rem);letter-spacing:.04em;margin-bottom:26px}
+.dune-divider{display:block;width:100%;height:110px;margin-bottom:-1px;position:relative;z-index:1}
+.dune-divider svg{display:block;width:100%;height:100%}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ---------- hero (dusk) ---------- */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg,#171432 0%,#2e2154 34%,#5c3a6e 58%,#a2566f 78%,#c96a6b 100%);padding:120px 5vw 0}
+.hero .sky{position:absolute;inset:0;pointer-events:none}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--ink-light);opacity:.7;animation:twinkle 4s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.85}}
+.balloon{position:absolute;top:16%;right:12%;width:52px;opacity:.5;animation:drift 14s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+.hero-content{position:relative;z-index:3;max-width:760px}
+.hero .eyebrow{color:rgba(244,236,225,.75)}
+.hero h1{font-family:var(--display);font-weight:200;font-size:clamp(2.6rem,7vw,4.8rem);letter-spacing:.06em;line-height:1.12;margin-bottom:22px}
+.hero .tag{font-size:clamp(1rem,2vw,1.2rem);color:var(--ink-dim);max-width:520px;margin:0 auto 40px}
+.hero .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:14px 28px;border-radius:999px;transition:transform .25s,background .25s,color .25s}
+.btn.solid{background:var(--sand);color:var(--night)}
+.btn.solid:hover{background:var(--apricot);transform:translateY(-2px)}
+.btn.ghost{border:1px solid rgba(244,236,225,.45);color:var(--ink-light)}
+.btn.ghost:hover{border-color:var(--sand);color:var(--sand);transform:translateY(-2px)}
+.hero .dunes{position:absolute;bottom:-2px;left:0;right:0;z-index:2;pointer-events:none}
+.hero .dunes svg{display:block;width:100%;height:auto}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:4;font-family:var(--mono);font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(23,20,50,.65);animation:hint 2.6s ease-in-out infinite}
+@keyframes hint{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
+
+/* ---------- about (night) ---------- */
+.about{background:linear-gradient(180deg,#171432 0%,#1d1840 100%)}
+.about-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:60px;align-items:start}
+.about p{color:var(--ink-dim);margin-bottom:18px;max-width:56ch}
+.about p strong{color:var(--ink-light);font-weight:700}
+.fact-list{display:flex;flex-direction:column;gap:14px}
+.fact{border:1px solid rgba(244,236,225,.14);border-radius:14px;padding:18px 20px;background:rgba(244,236,225,.04)}
+.fact .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--apricot);display:block;margin-bottom:6px}
+.fact .v{font-size:.95rem;color:var(--ink-light)}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+
+/* ---------- journey (pre-dawn) ---------- */
+.journey{background:linear-gradient(180deg,#241c4a 0%,#3b2760 55%,#5c3a6e 100%)}
+.timeline{position:relative;margin-top:20px;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,rgba(246,220,175,.05),rgba(246,220,175,.55),rgba(246,220,175,.05))}
+.stop{position:relative;padding:0 0 46px 22px}
+.stop:last-child{padding-bottom:0}
+.stop::before{content:"";position:absolute;left:-31px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--dusk);border:2px solid var(--sand)}
+.stop .when{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--apricot)}
+.stop h3{font-family:var(--display);font-weight:400;font-size:1.25rem;letter-spacing:.03em;margin:8px 0 4px}
+.stop .where{font-size:.88rem;color:var(--ink-dim);margin-bottom:10px}
+.stop ul{list-style:none;color:var(--ink-dim);font-size:.95rem;max-width:62ch}
+.stop ul li{padding-left:18px;position:relative;margin-bottom:6px}
+.stop ul li::before{content:"—";position:absolute;left:0;color:var(--coral)}
+
+/* ---------- skills (sunrise approach) ---------- */
+.skills{background:linear-gradient(180deg,#5c3a6e 0%,#8a4e73 55%,#c96a6b 100%)}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:14px}
+.skill-card{border:1px solid rgba(244,236,225,.18);border-radius:16px;padding:26px 24px;background:rgba(23,20,50,.22);backdrop-filter:blur(2px)}
+.skill-card h3{font-family:var(--display);font-weight:400;font-size:1.1rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.skill-card .note{font-size:.85rem;color:var(--ink-dim);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:6px 12px;border-radius:999px;border:1px solid rgba(244,236,225,.3);color:var(--ink-light)}
+
+/* ---------- projects (sunrise) ---------- */
+.projects{background:linear-gradient(180deg,#c96a6b 0%,#efa76a 60%,#f6dcaf 100%);color:var(--ink-dark)}
+.projects .eyebrow{color:rgba(58,43,79,.6)}
+.projects h2{color:var(--ink-dark)}
+.projects .lede{color:var(--ink-dark-dim);max-width:58ch;margin-bottom:44px}
+.report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.report{background:rgba(251,240,220,.82);border:1px solid rgba(58,43,79,.14);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.report:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(58,43,79,.18)}
+.report-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px dashed rgba(58,43,79,.22);font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--ink-dark-dim)}
+.status{padding:4px 12px;border-radius:999px;font-weight:500;letter-spacing:.14em}
+.status.pass{background:rgba(46,120,90,.14);color:#2e785a}
+.status.wip{background:rgba(201,106,107,.16);color:#a44b4c}
+.report-body{padding:22px 22px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
+.report-body h3{font-family:var(--display);font-weight:400;font-size:1.28rem;letter-spacing:.02em;color:var(--ink-dark)}
+.report-body .scope{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#a4586a}
+.report-body p{font-size:.93rem;color:var(--ink-dark-dim)}
+.deliv{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+.deliv span{font-family:var(--mono);font-size:.66rem;padding:5px 11px;border-radius:999px;border:1px solid rgba(58,43,79,.25);color:var(--ink-dark)}
+
+/* ---------- contact (day) ---------- */
+.contact{background:linear-gradient(180deg,#f6dcaf 0%,#fbf0dc 100%);color:var(--ink-dark);text-align:center;padding-bottom:90px}
+.contact .eyebrow{color:rgba(58,43,79,.55)}
+.contact h2{color:var(--ink-dark);margin-bottom:14px}
+.contact .lede{color:var(--ink-dark-dim);max-width:52ch;margin:0 auto 38px}
+.contact .btn.solid{background:var(--ink-dark);color:var(--cream)}
+.contact .btn.solid:hover{background:var(--plum)}
+.contact-links{display:flex;justify-content:center;gap:26px;margin-top:44px;flex-wrap:wrap}
+.contact-links a{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dark-dim);text-decoration:none;border-bottom:1px solid rgba(58,43,79,.25);padding-bottom:3px;transition:color .25s,border-color .25s}
+.contact-links a:hover{color:var(--ink-dark);border-color:var(--ink-dark)}
+
+/* ---------- footer ---------- */
+footer{background:var(--cream);color:var(--ink-dark-dim);text-align:center;padding:26px 5vw 34px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em}
+
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--apricot);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
 
-<div class="atmosphere" id="atmosphere" aria-hidden="true"></div>
-<div class="particles" aria-hidden="true">
-  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span><span></span>
-</div>
-<div class="lanterns" aria-hidden="true">
-  <span></span><span></span><span></span><span></span><span></span>
-</div>
-<div class="vignette" aria-hidden="true"></div>
-<div class="scroll-progress" id="scroll-progress"></div>
-
-<nav>
-  <div class="logo">AP.</div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="nav-actions">
-    <button id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
-      <span class="toggle-track">
-        <span class="toggle-thumb"></span>
-      </span>
-    </button>
-    <a class="btn-pill btn-pill-outline" href="resume.pdf" download>Resume</a>
-    <a class="btn-pill" href="#contact">Hire me</a>
-  </div>
+<nav class="nav" id="nav">
+  <a class="brand" href="#top">AYUSHA</a>
+  <ul class="links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Work</a></li>
+  </ul>
+  <a class="hire" href="#contact">Work with me</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-stars" aria-hidden="true">
-    <span style="top:14%; left:10%;"></span>
-    <span style="top:22%; left:24%; animation-delay:.5s;"></span>
-    <span style="top:10%; left:42%; animation-delay:1s;"></span>
-    <span style="top:28%; left:62%; animation-delay:1.5s;"></span>
-    <span style="top:16%; left:80%; animation-delay:2s;"></span>
-    <span style="top:34%; left:90%; animation-delay:2.5s;"></span>
-    <span style="top:8%; left:55%; animation-delay:3s;"></span>
+<!-- ================= HERO · DUSK ================= -->
+<header class="hero" id="top">
+  <div class="sky" id="sky" aria-hidden="true">
+    <svg class="balloon" viewBox="0 0 60 90" aria-hidden="true">
+      <path d="M30 4c-14 0-24 10-24 24 0 16 16 26 20 34h8c4-8 20-18 20-34 0-14-10-24-24-24z" fill="#f4ece1" opacity=".85"/>
+      <path d="M26 66h8l-2 10h-4z" fill="#f4ece1" opacity=".7"/>
+      <rect x="25" y="78" width="10" height="8" rx="2" fill="#f4ece1" opacity=".85"/>
+    </svg>
   </div>
-  <span class="hero-moon" aria-hidden="true"></span>
-  <div class="hero-horizon" aria-hidden="true">
-    <span data-speed="0.04"></span>
-    <span data-speed="0.08"></span>
-    <span data-speed="0.12"></span>
-  </div>
-  <div class="hero-text">
-    <span class="eyebrow">Junior QA Engineer · Manual Testing</span>
-    <h1>my QA journey</h1>
-    <p class="subtitle">precise testing · clear reporting · continuous learning</p>
-    <p class="desc">
-      I'm Ayusha, a B.Sc. CSIT graduate working as a QA engineer with hands-on
-      experience in manual testing, structured test design, and defect
-      documentation across real and practice projects.
-    </p>
+
+  <div class="hero-content">
+    <span class="eyebrow">QA · Manual Testing · API · Automation</span>
+    <h1>Ayusha<br>Pradhananga</h1>
+    <p class="tag">I find what could go wrong — before your users do. Quality assurance with structured test design and defect reports developers can act on immediately.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#projects">View Work</a>
-      <a class="btn-pill btn-pill-outline" href="#contact">Contact Me</a>
-      <a class="btn-pill btn-pill-outline" href="resume.pdf" download>Download Resume</a>
+      <a class="btn solid" href="#projects">View my work</a>
+      <a class="btn ghost" href="#contact">Work with me</a>
+    </div>
+  </div>
+
+  <div class="dunes" aria-hidden="true">
+    <svg viewBox="0 0 1440 260" preserveAspectRatio="none">
+      <path d="M0 190 C 240 120 420 210 720 165 C 1020 120 1200 200 1440 150 L1440 260 L0 260 Z" fill="#8a4e73" opacity=".55"/>
+      <path d="M0 220 C 300 160 560 240 860 200 C 1120 166 1300 230 1440 195 L1440 260 L0 260 Z" fill="#3b2760" opacity=".8"/>
+      <path d="M0 245 C 360 195 680 262 1000 228 C 1220 206 1360 248 1440 232 L1440 260 L0 260 Z" fill="#171432"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ================= ABOUT · NIGHT ================= -->
+<section class="section about" id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="eyebrow">TC-01 · About</span>
+        <h2>Testing is exploration</h2>
+        <p>My instinct is to question assumptions. While everyone else thinks about what <strong>should</strong> happen, I map out what <strong>could</strong> go wrong — and document it clearly enough that it actually gets fixed.</p>
+        <p>I work the QA process end-to-end: analyzing requirements, designing structured test cases, executing manual and exploratory passes, and logging defects with full reproducibility — severity, priority, steps, expected vs. actual.</p>
+        <p>Through Leapfrog Connect's QA Foundations training I've practiced this on real platforms, including API testing with Postman and UI automation with Cypress. And as a computer science student, I understand how software is built — so I know where the likely failure points are before I even open the app.</p>
+      </div>
+      <div class="fact-list reveal">
+        <div class="fact"><span class="k">Role</span><span class="v">Junior QA Engineer — manual first, automation growing</span></div>
+        <div class="fact"><span class="k">Education</span><span class="v">B.Sc. CSIT, Padmakanya Multiple Campus, Tribhuvan University</span></div>
+        <div class="fact"><span class="k">Base</span><span class="v">Kathmandu, Nepal — open to remote &amp; freelance work</span></div>
+        <div class="fact"><span class="k">Community</span><span class="v">Open-source contributor — UbuCon Asia 2025 · GNOME Nepal</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="wave-divider wave-after-hero" aria-hidden="true">
-  <svg viewBox="0 0 1440 50" preserveAspectRatio="none" class="wave-fill-accent"><path d="M0,20 C240,55 480,0 720,20 C960,40 1200,5 1440,25 L1440,50 L0,50 Z"></path></svg>
+<div class="dune-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 110" preserveAspectRatio="none" style="background:#1d1840">
+    <path d="M0 70 C 280 20 520 95 820 60 C 1080 30 1280 80 1440 55 L1440 110 L0 110 Z" fill="#241c4a"/>
+  </svg>
 </div>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <span class="section-label">About Me</span>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>
-        My instinct is to question assumptions. When everyone else is thinking
-        about what should happen, I'm thinking about what <strong>could</strong> go wrong —
-        and documenting it clearly enough that it actually gets fixed.
-      </p>
-      <p>
-        I work through the QA process end-to-end: analyzing requirements,
-        designing structured test cases, executing manual and exploratory
-        testing, and logging defects with full reproducibility so developers
-        can act on them immediately.
-      </p>
-      <p>
-        Through Leapfrog Connect's QA Foundations training, I've practiced this
-        process on real platforms — including API testing with Postman and
-        UI automation concepts with Cypress.
-      </p>
-      <p>
-        As a CS student I also understand how software is constructed, which
-        makes me a sharper tester — I know where the likely failure points are
-        before I even open the app.
-      </p>
-
-      <div class="learning-tags">
-        <span class="tags-label">Core skills</span>
-        <div class="tag-row">
-          <span class="pill">Manual Testing</span>
-          <span class="pill">Test Case Design</span>
-          <span class="pill">JIRA</span>
-          <span class="pill">Postman</span>
-          <span class="pill">Cypress</span>
-          <span class="pill">Agile / Scrum</span>
-          <span class="pill">SDLC &amp; STLC</span>
-        </div>
+<!-- ================= JOURNEY · PRE-DAWN ================= -->
+<section class="section journey" id="journey">
+  <div class="inner">
+    <span class="eyebrow reveal">TC-02 · Experience</span>
+    <h2 class="reveal">The route so far</h2>
+    <div class="timeline">
+      <div class="stop reveal">
+        <span class="when">Dec 2025 — Mar 2026</span>
+        <h3>QA Foundations Training</h3>
+        <p class="where">Leapfrog Connect</p>
+        <ul>
+          <li>Structured training in software testing and QA workflows within Agile environments</li>
+          <li>Test plan preparation, test case design, execution, and defect tracking in JIRA</li>
+          <li>API testing with Postman and UI automation fundamentals with Cypress</li>
+          <li>Hands-on grounding in SDLC, STLC, and the full bug life cycle</li>
+        </ul>
       </div>
-    </div>
-
-    <div class="about-cards">
-      <div class="info-card reveal">
-        <span class="info-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5"/></svg>
-        </span>
+      <div class="stop reveal">
+        <span class="when">Jun 2025 — Jan 2026</span>
+        <h3>Project Support Trainee</h3>
+        <p class="where">Digischool Global</p>
+        <ul>
+          <li>Facilitated school workshops introducing AI, IoT, and digital learning tools</li>
+          <li>Explained technical ideas to non-technical audiences — the same skill that makes a bug report readable</li>
+        </ul>
+      </div>
+      <div class="stop reveal">
+        <span class="when">Jan 2025 — Aug 2025</span>
+        <h3>Marketing, Outreach &amp; Social Media</h3>
+        <p class="where">UbuCon Asia 2025 · GNOME Nepal</p>
+        <ul>
+          <li>Helped plan and organize an international open-source conference</li>
+          <li>Coordination, communication, and community outreach in a distributed team</li>
+        </ul>
+      </div>
+      <div class="stop reveal">
+        <span class="when">Feb 2022 — Present</span>
         <h3>B.Sc. Computer Science &amp; IT</h3>
-        <p>Undergraduate student</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="info-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6L4.5 17.5A2 2 0 0 0 6.3 20.5h11.4a2 2 0 0 0 1.8-3L15 8V2"/><path d="M9 2h6"/><path d="M8.5 14h7"/></svg>
-        </span>
-        <h3>Junior QA Engineer</h3>
-        <p>QA Foundations Training — Leapfrog Connect</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="info-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-        </span>
-        <h3>Kathmandu, Nepal</h3>
-        <p>Available for remote work</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="info-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
-        </span>
-        <h3>Automation &amp; AI Tools</h3>
-        <p>Cypress · Postman · JMeter</p>
+        <p class="where">Padmakanya Multiple Campus, Tribhuvan University</p>
+        <ul>
+          <li>Foundation in programming, databases, and software engineering that sharpens how I test</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<div class="wave-divider wave-top-accent" aria-hidden="true">
-  <svg viewBox="0 0 1440 50" preserveAspectRatio="none" class="wave-fill-main"><path d="M0,25 C240,5 480,45 720,22 C960,0 1200,40 1440,18 L1440,50 L0,50 Z"></path></svg>
+<div class="dune-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 110" preserveAspectRatio="none" style="background:#5c3a6e">
+    <path d="M0 60 C 300 100 560 25 860 65 C 1120 95 1300 40 1440 70 L1440 110 L0 110 Z" fill="#5c3a6e" style="display:none"/>
+    <path d="M0 75 C 260 30 540 100 840 62 C 1100 32 1290 88 1440 58 L1440 110 L0 110 Z" fill="#63406f"/>
+  </svg>
 </div>
 
-<!-- SKILLS -->
-<section class="skills" id="skills">
-  <span class="section-label">Skills &amp; Tools</span>
-  <h2>what I bring to a team</h2>
-  <p class="skills-intro">Comfortable owning a feature's test cycle from requirement review to sign-off.</p>
-
-  <div class="skill-columns">
-    <div class="skill-col">
-      <span class="col-num">01</span>
-      <h3>Testing</h3>
-      <p class="col-desc">Core QA discipline — the heart of the work.</p>
-      <ul>
-        <li>Manual Testing</li>
-        <li>Exploratory Testing</li>
-        <li>Regression Testing</li>
-        <li>Test Case Design</li>
-        <li>Bug Reporting</li>
-        <li>SDLC &amp; STLC</li>
-      </ul>
-    </div>
-    <div class="skill-col">
-      <span class="col-num">02</span>
-      <h3>Tools</h3>
-      <p class="col-desc">Industry tools for tracking, reporting, and collaboration.</p>
-      <ul>
-        <li>JIRA</li>
-        <li>GitHub</li>
-        <li>Test Documentation</li>
-        <li>Agile / Scrum</li>
-      </ul>
-    </div>
-    <div class="skill-col">
-      <span class="col-num">03</span>
-      <h3>Development</h3>
-      <p class="col-desc">Technical foundation that sharpens how I test.</p>
-      <ul>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>C / C++</li>
-        <li>HTML &amp; CSS</li>
-        <li>Git basics</li>
-      </ul>
-    </div>
-    <div class="skill-col skill-col-accent reveal">
-      <span class="col-num">04</span>
-      <h3>Automation</h3>
-      <p class="col-desc">Hands-on exposure through QA training and practice projects.</p>
-      <ul>
-        <li>Cypress (UI automation)</li>
-        <li>Postman (API testing)</li>
-        <li>JMeter (performance testing)</li>
-        <li>AI-assisted QA tooling</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<div class="wave-divider wave-top-main" aria-hidden="true">
-  <svg viewBox="0 0 1440 50" preserveAspectRatio="none" class="wave-fill-accent"><path d="M0,18 C240,48 480,2 720,24 C960,46 1200,8 1440,28 L1440,50 L0,50 Z"></path></svg>
-</div>
-
-<!-- PROJECTS -->
-<section class="projects" id="projects">
-  <span class="section-label">Projects</span>
-  <h2>featured work</h2>
-
-  <div class="project-card featured reveal">
-    <div class="project-info">
-      <span class="project-tagline">Manual QA · Defect Reporting</span>
-      <h3>Vyaguta HR Management System</h3>
-      <p>
-        <strong>Objective:</strong> validate core HR workflows — employee onboarding,
-        leave management, and payroll — before release.
-      </p>
-      <p>
-        <strong>Approach:</strong> reviewed requirements, designed 40+ structured
-        test cases with a requirement-traceability mindset, then executed manual
-        and exploratory testing passes.
-      </p>
-      <p>
-        <strong>Outcome:</strong> logged defects in JIRA with full severity/priority
-        classification and reproduction steps, giving developers everything needed
-        to act without follow-up questions.
-      </p>
-      <a class="link" href="#">View project →</a>
-    </div>
-    <div class="project-deliverables">
-      <span class="deliverables-label">Deliverables</span>
-      <ul>
-        <li>Test Plan</li>
-        <li>40+ Test Cases</li>
-        <li>Defect Report</li>
-        <li>JIRA Tracking</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="project-grid">
-    <div class="project-card reveal">
-      <span class="project-tagline">UI Automation · API &amp; Performance Testing</span>
-      <h3>Rahul Shetty Automation Practice</h3>
-      <p>
-        Practiced automation fundamentals through structured exercises:
-        executed UI test cases with Cypress, performed API testing with Postman,
-        and explored performance testing concepts using JMeter.
-      </p>
-      <div class="tag-row">
-        <span class="pill">Cypress</span>
-        <span class="pill">Postman</span>
-        <span class="pill">JMeter</span>
+<!-- ================= SKILLS · SUNRISE APPROACH ================= -->
+<section class="section skills" id="skills">
+  <div class="inner">
+    <span class="eyebrow reveal">TC-03 · Skills</span>
+    <h2 class="reveal">What I bring to a team</h2>
+    <div class="skill-grid">
+      <div class="skill-card reveal">
+        <h3>Testing</h3>
+        <p class="note">The heart of the work — disciplined, repeatable, documented.</p>
+        <div class="chips"><span class="chip">Manual Testing</span><span class="chip">Exploratory</span><span class="chip">Regression</span><span class="chip">Test Case Design</span><span class="chip">Test Plans</span><span class="chip">Bug Reporting</span></div>
       </div>
-    </div>
-    <div class="project-card mock reveal">
-      <span class="mock-badge">sample · placeholder</span>
-      <span class="project-tagline">Functional · Security Basics</span>
-      <h3>Login &amp; Authentication Module</h3>
-      <p>
-        Systematic test suite for a login module: valid/invalid credentials,
-        boundary values, session persistence, and basic security probes.
-      </p>
-      <div class="tag-row">
-        <span class="pill">Test Cases</span>
-        <span class="pill">Security Checklist</span>
-        <span class="pill">Findings Report</span>
+      <div class="skill-card reveal">
+        <h3>Tools</h3>
+        <p class="note">Tracking, reporting, and collaborating with dev teams.</p>
+        <div class="chips"><span class="chip">JIRA</span><span class="chip">GitHub</span><span class="chip">Test Documentation</span><span class="chip">Agile / Scrum</span><span class="chip">SDLC · STLC</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Automation &amp; API</h3>
+        <p class="note">Hands-on through QA training and practice projects.</p>
+        <div class="chips"><span class="chip">Cypress</span><span class="chip">Postman</span><span class="chip">JMeter</span><span class="chip">AI-assisted QA</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Development</h3>
+        <p class="note">Technical foundation that sharpens how I test.</p>
+        <div class="chips"><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">HTML &amp; CSS</span><span class="chip">Git</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="wave-divider wave-top-accent" aria-hidden="true">
-  <svg viewBox="0 0 1440 50" preserveAspectRatio="none" class="wave-fill-main"><path d="M0,28 C240,8 480,42 720,20 C960,2 1200,38 1440,15 L1440,50 L0,50 Z"></path></svg>
+<div class="dune-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 110" preserveAspectRatio="none" style="background:#c96a6b">
+    <path d="M0 68 C 280 25 540 98 840 60 C 1100 28 1300 85 1440 55 L1440 110 L0 110 Z" fill="#cd7269"/>
+  </svg>
 </div>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="contact-grid">
-    <div>
-      <span class="section-label">Contact</span>
-      <h2>let's build something together.</h2>
-      <p>
-        Open to Junior QA Engineer roles — remote or Kathmandu-based. If you're
-        hiring, collaborating, or just want to chat — I'd love to hear from you.
-      </p>
-      <a class="btn btn-primary" href="mailto:ayushapradhananga07@gmail.com">Say hello</a>
+<!-- ================= PROJECTS · SUNRISE ================= -->
+<section class="section projects" id="projects">
+  <div class="inner">
+    <span class="eyebrow reveal">TC-04 · Featured work</span>
+    <h2 class="reveal">Test reports from the field</h2>
+    <p class="lede reveal">Each project run like a real QA cycle — scoped, executed, and signed off with documentation a developer can act on without follow-up questions.</p>
+    <div class="report-grid">
+
+      <article class="report reveal">
+        <div class="report-head"><span>TR-01 · MANUAL QA</span><span class="status pass">PASS</span></div>
+        <div class="report-body">
+          <span class="scope">HR platform · Onboarding · Leave · Payroll</span>
+          <h3>Vyaguta HR Management System</h3>
+          <p>Validated core HR workflows before release. Reviewed requirements, designed 40+ structured test cases with requirement traceability, then executed manual and exploratory passes. Defects logged in JIRA with severity, priority, and full reproduction steps.</p>
+          <div class="deliv"><span>Test Plan</span><span>40+ Test Cases</span><span>Defect Report</span><span>JIRA</span></div>
+        </div>
+      </article>
+
+      <article class="report reveal">
+        <div class="report-head"><span>TR-02 · QA AUDIT</span><span class="status pass">PASS</span></div>
+        <div class="report-body">
+          <span class="scope">Web application · Functional · UI/UX · Performance</span>
+          <h3>Website Testing &amp; QA Audit</h3>
+          <p>End-to-end audit of a live web application: functional testing, UI/UX review, and basic performance checks. Executed documented test cases and delivered a summary report with prioritized findings.</p>
+          <div class="deliv"><span>Test Plan</span><span>Executed Cases</span><span>Summary Report</span></div>
+        </div>
+      </article>
+
+      <article class="report reveal">
+        <div class="report-head"><span>TR-03 · MANUAL QA</span><span class="status pass">PASS</span></div>
+        <div class="report-body">
+          <span class="scope">Employee management · Core workflows</span>
+          <h3>Employee Management System</h3>
+          <p>Prepared a complete test plan covering scope, objectives, and strategy, then designed structured test cases validating employee management workflows and user scenarios.</p>
+          <div class="deliv"><span>Test Plan</span><span>Test Cases</span><span>User Scenarios</span></div>
+        </div>
+      </article>
+
+      <article class="report reveal">
+        <div class="report-head"><span>TR-04 · AUTOMATION</span><span class="status pass">PASS</span></div>
+        <div class="report-body">
+          <span class="scope">UI · API · Performance</span>
+          <h3>Automation Practice Suite</h3>
+          <p>Built automation fundamentals through structured exercises: UI test execution with Cypress, API validation of responses and status codes with Postman, and performance testing concepts with JMeter.</p>
+          <div class="deliv"><span>Cypress</span><span>Postman</span><span>JMeter</span></div>
+        </div>
+      </article>
+
     </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT · DAY ================= -->
+<section class="section contact" id="contact">
+  <div class="inner reveal">
+    <span class="eyebrow">TC-05 · Contact</span>
+    <h2>Let's ship something reliable</h2>
+    <p class="lede">Available for freelance QA projects and remote collaborations — from a one-off test cycle to ongoing quality support. If you're building something and want a second pair of eyes on it before your users find the bugs, let's talk.</p>
+    <a class="btn solid" href="mailto:ayushapradhananga07@gmail.com">Say hello</a>
     <div class="contact-links">
-      <span class="tags-label">Find me at</span>
-      <a href="mailto:ayushapradhananga07@gmail.com">
-        <span class="contact-label">Email</span>
-        ayushapradhananga07@gmail.com
-      </a>
-      <a href="https://linkedin.com/in/ayusha-pradhananga" target="_blank" rel="noopener">
-        <span class="contact-label">LinkedIn</span>
-        ayusha-pradhananga
-      </a>
-      <a href="https://github.com/ayusha-147" target="_blank" rel="noopener">
-        <span class="contact-label">GitHub</span>
-        ayusha-147
-      </a>
+      <a href="mailto:ayushapradhananga07@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/ayusha-pradhananga" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/ayusha-147" target="_blank" rel="noopener">GitHub</a>
+      <a href="resume.pdf">Resume</a>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-horizon" aria-hidden="true">
-    <span data-speed="0.02"></span>
-    <span data-speed="0.04"></span>
-  </div>
-  <div class="footer-particles" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
+<footer>© 2026 AYUSHA PRADHANANGA · TESTED WITH CURIOSITY</footer>
 
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="logo">AP.</span>
-      <p>Junior QA Engineer crafting clear, reliable testing — one defect report at a time.</p>
-    </div>
-
-    <div class="footer-col">
-      <span class="tags-label">Navigate</span>
-      <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-
-    <div class="footer-col">
-      <span class="tags-label">Connect</span>
-      <div class="footer-socials">
-        <a href="mailto:ayushapradhananga07@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
-        </a>
-        <a href="https://linkedin.com/in/ayusha-pradhananga" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5s-1.98-.9-1.98-2S1.9 1.5 3 1.5s1.98.9 1.98 2ZM.5 8.25h5V23h-5V8.25Zm7.5 0h4.8v2.02h.07c.67-1.27 2.3-2.6 4.74-2.6 5.07 0 6.01 3.34 6.01 7.68V23h-5v-6.5c0-1.55-.03-3.55-2.17-3.55-2.17 0-2.5 1.7-2.5 3.44V23h-5V8.25Z" transform="translate(2 0)"/></svg>
-        </a>
-        <a href="https://github.com/ayusha-147" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5a10.5 10.5 0 0 0-3.32 20.47c.53.1.72-.23.72-.51v-1.98c-2.93.64-3.55-1.25-3.55-1.25-.48-1.22-1.17-1.55-1.17-1.55-.96-.65.07-.64.07-.64 1.06.07 1.62 1.09 1.62 1.09.94 1.6 2.46 1.14 3.06.87.1-.68.37-1.14.67-1.4-2.34-.27-4.8-1.17-4.8-5.2 0-1.15.41-2.09 1.08-2.82-.11-.27-.47-1.35.1-2.81 0 0 .89-.28 2.9 1.08a10 10 0 0 1 5.28 0c2.01-1.36 2.9-1.08 2.9-1.08.57 1.46.21 2.54.1 2.81.67.73 1.08 1.67 1.08 2.82 0 4.04-2.47 4.93-4.82 5.19.38.33.71.97.71 1.96v2.9c0 .28.19.62.73.51A10.5 10.5 0 0 0 12 1.5Z"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <span>© 2026 Ayusha Pradhananga</span>
-    <span class="footer-note">Built with care, tested with curiosity.</span>
-  </div>
-</footer>
-
-<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
-
-<script src="script.js"></script>
+<script>
+// stars in hero sky
+(function(){
+  const sky=document.getElementById('sky');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for(let i=0;i<48;i++){
+    const s=document.createElement('span');
+    s.className='star';
+    s.style.left=Math.random()*100+'%';
+    s.style.top=Math.random()*52+'%';
+    const size=Math.random()*1.6+1;
+    s.style.width=s.style.height=size+'px';
+    if(!reduce){s.style.animationDelay=(Math.random()*4)+'s';s.style.animationDuration=(3+Math.random()*4)+'s';}
+    sky.appendChild(s);
+  }
+})();
+// nav background on scroll
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+// scroll reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
