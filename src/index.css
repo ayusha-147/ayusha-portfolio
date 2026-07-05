@@ -103,7 +103,7 @@ h2{font-family:var(--display);font-weight:300;font-size:clamp(1.9rem,4vw,2.8rem)
 .hero .tag{font-size:clamp(1rem,2vw,1.18rem);opacity:.82;max-width:540px;margin:0 auto 40px}
 .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .hero .btn.solid{background:#f6dcaf;color:#171432}
-.hero .btn.solid:hover{background:#fff}
+.hero .btn.solid:hover{background:#efa76a;transform:translateY(-2px)}
 .hero .btn.ghost{border-color:rgba(244,236,225,.5);color:#f4ece1}
 :root[data-theme="light"] .hero .btn.solid{background:#3a2b4f;color:#fbf3e4}
 :root[data-theme="light"] .hero .btn.solid:hover{background:#5c3a6e}
@@ -111,6 +111,12 @@ h2{font-family:var(--display);font-weight:300;font-size:clamp(1.9rem,4vw,2.8rem)
 .hero .dunes{position:absolute;bottom:-2px;left:0;right:0;z-index:2;pointer-events:none}
 .hero .dunes svg{display:block;width:100%;height:auto}
 .d1{fill:var(--dune1);opacity:.6}.d2{fill:var(--dune2);opacity:.85}.d3{fill:var(--dune3)}
+.hero .dunes path,.dune-divider svg path{transform-box:fill-box;transform-origin:50% 100%}
+.hero .dunes .d1{animation:dune-sway 12s ease-in-out infinite alternate}
+.hero .dunes .d2{animation:dune-sway 9s ease-in-out infinite alternate-reverse}
+.hero .dunes .d3{animation:dune-sway 14s ease-in-out infinite alternate}
+.dune-divider svg path{animation:dune-sway 10s ease-in-out infinite alternate}
+@keyframes dune-sway{0%{transform:translateX(-10px) scaleX(1.04) scaleY(1)}50%{transform:translateX(0) scaleX(1.04) scaleY(1.08)}100%{transform:translateX(10px) scaleX(1.04) scaleY(1)}}
 
 /* ---------- about ---------- */
 .about{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-alt) 100%)}
@@ -140,7 +146,8 @@ h2{font-family:var(--display);font-weight:300;font-size:clamp(1.9rem,4vw,2.8rem)
 /* ---------- skills ---------- */
 .skills{background:linear-gradient(180deg,var(--bg-alt2) 0%,var(--bg-alt) 100%)}
 .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:10px}
-.skill-card{border:1px solid var(--card-border);border-radius:16px;padding:26px 24px;background:var(--card-bg)}
+.skill-card{border:1px solid var(--card-border);border-radius:16px;padding:26px 24px;background:var(--card-bg);transition:transform .3s,box-shadow .3s,border-color .3s}
+.skill-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--accent)}
 .skill-card h3{font-family:var(--display);font-weight:400;font-size:1.05rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
 .skill-card .note{font-size:.85rem;color:var(--ink-dim);margin-bottom:16px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
