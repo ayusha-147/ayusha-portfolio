@@ -179,10 +179,10 @@ h2{font-family:var(--display);font-weight:300;font-size:clamp(1.9rem,4vw,2.8rem)
 .cert-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
 .cert-body h3{font-family:var(--display);font-weight:400;font-size:1.15rem;color:var(--paper-ink)}
 .cert-body .issuer{font-size:.88rem;color:var(--paper-dim)}
-.cert-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px;align-items:center}
+.cert-meta{display:flex;flex-wrap:nowrap;gap:8px;margin-top:auto;padding-top:6px;align-items:center}
 .verified{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;padding:5px 12px;border-radius:999px;background:rgba(46,120,90,.14);color:var(--pass);display:inline-flex;align-items:center;gap:6px}
 .verified svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-.cert-id{font-family:var(--mono);font-size:.64rem;color:var(--paper-dim);letter-spacing:.04em;word-break:break-all}
+.cert-id{font-family:var(--mono);font-size:.64rem;color:var(--paper-dim);letter-spacing:.04em;word-break:break-all;min-width:0}
 .cert-body.plain{padding-top:24px}
 /* lightbox */
 .lightbox{position:fixed;inset:0;z-index:90;background:rgba(12,10,28,.85);display:none;align-items:center;justify-content:center;padding:5vw;cursor:zoom-out}
