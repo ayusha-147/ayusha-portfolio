@@ -10,8 +10,21 @@ import Certs from './components/Certs.jsx'
 import Lightbox from './components/Lightbox.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
+import Beyond from './components/Beyond.jsx'
 
 export default function App() {
+  // hash route: the hero balloon carries you to #/beyond
+  const [route, setRoute] = useState(window.location.hash)
+  useEffect(() => {
+    const onHash = () => setRoute(window.location.hash)
+    addEventListener('hashchange', onHash)
+    return () => removeEventListener('hashchange', onHash)
+  }, [])
+  const beyond = route === '#/beyond'
+  useEffect(() => {
+    scrollTo(0, 0)
+  }, [beyond])
+
   // theme: default follows system preference, toggle overrides for this visit
   const [theme, setTheme] = useState(() =>
     window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
@@ -38,7 +51,7 @@ export default function App() {
     )
     document.querySelectorAll('.reveal').forEach(el => io.observe(el))
     return () => io.disconnect()
-  }, [])
+  }, [beyond])
 
   // lightbox for certificates and photos
   const [lightbox, setLightbox] = useState({ open: false, src: '', alt: 'Full size view' })
@@ -58,6 +71,10 @@ export default function App() {
     addEventListener('keydown', onKey)
     return () => removeEventListener('keydown', onKey)
   }, [lightbox.open])
+
+  if (beyond) {
+    return <Beyond />
+  }
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 
 export default function Hero() {
   // stars: same generation logic as the original script, rendered once
@@ -20,20 +20,48 @@ export default function Hero() {
     })
   }, [])
 
+  // gentle scroll parallax: sky drifts, content floats up and fades
+  const skyRef = useRef(null)
+  const contentRef = useRef(null)
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    let raf = 0
+    const onScroll = () => {
+      if (raf) return
+      raf = requestAnimationFrame(() => {
+        raf = 0
+        const y = window.scrollY
+        if (y <= window.innerHeight) {
+          skyRef.current.style.transform = `translateY(${y * 0.18}px)`
+          contentRef.current.style.transform = `translateY(${y * 0.1}px)`
+          contentRef.current.style.opacity = String(Math.max(0, 1 - y / (window.innerHeight * 0.85)))
+        }
+      })
+    }
+    addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(raf)
+    }
+  }, [])
+
   return (
     <header className="hero" id="top">
-      <div className="sky" id="sky" aria-hidden="true">
-        <svg className="balloon" viewBox="0 0 60 90" aria-hidden="true" style={{ opacity: '.55' }}>
-          <path d="M30 4c-14 0-24 10-24 24 0 16 16 26 20 34h8c4-8 20-18 20-34 0-14-10-24-24-24z" />
-          <path d="M26 66h8l-2 10h-4z" opacity=".7" />
-          <rect x="25" y="78" width="10" height="8" rx="2" />
-        </svg>
+      <div className="sky" id="sky" aria-hidden="true" ref={skyRef}>
         {stars.map((style, i) => (
           <span className="star" key={i} style={style} />
         ))}
       </div>
 
-      <div className="hero-content">
+      <a className="balloon-link" href="#/beyond" aria-label="Take the balloon up, see what I do off the clock" title="Take a ride?">
+        <svg className="balloon" viewBox="0 0 60 90" aria-hidden="true">
+          <path d="M30 4c-14 0-24 10-24 24 0 16 16 26 20 34h8c4-8 20-18 20-34 0-14-10-24-24-24z" />
+          <path d="M26 66h8l-2 10h-4z" opacity=".7" />
+          <rect x="25" y="78" width="10" height="8" rx="2" />
+        </svg>
+      </a>
+
+      <div className="hero-content" ref={contentRef}>
         <span className="eyebrow">QA · Manual Testing · API · Automation</span>
         <h1>Ayusha<br />Pradhananga</h1>
         <p className="tag">Quality Assurance Engineer. I find what could go wrong before your users do, through structured test design, disciplined execution, and defect reports developers can act on immediately.</p>
