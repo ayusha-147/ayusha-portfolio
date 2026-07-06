@@ -1,5 +1,8 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import coverArt from '../assets/red-and-wolf.jpg'
+
+const CLIP_SECONDS = 10
+const SONG_URL = import.meta.env.BASE_URL + 'song.mp3'
 
 const NOTES = [
   { ch: '♪', left: '30%', bottom: '30%', delay: '0s', dur: '9s', size: '17px' },
@@ -30,6 +33,37 @@ export default function Beyond() {
   }, [])
 
   const [zoomed, setZoomed] = useState(false)
+
+  // vinyl audio: 10 second looping taste; falls back to Substack if no song file
+  const audioRef = useRef(null)
+  const [playing, setPlaying] = useState(false)
+  const [hasSong, setHasSong] = useState(true)
+
+  const toggleSong = () => {
+    const a = audioRef.current
+    if (!hasSong || !a) {
+      open('https://violet47.substack.com', '_blank', 'noopener')
+      return
+    }
+    if (playing) {
+      a.pause()
+      setPlaying(false)
+    } else {
+      a.currentTime = 0
+      a.play().then(() => setPlaying(true)).catch(() => setHasSong(false))
+    }
+  }
+
+  const onTime = () => {
+    const a = audioRef.current
+    if (a && a.currentTime >= CLIP_SECONDS) a.currentTime = 0
+  }
+
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) audioRef.current.pause()
+    }
+  }, [])
 
   useEffect(() => {
     document.body.style.overflow = zoomed ? 'hidden' : ''
@@ -72,9 +106,14 @@ export default function Beyond() {
         <p className="beyond-lede">By day I break software. By night the findings get filed somewhere softer.</p>
       </div>
       <div className="album">
-        <a className="vinyl-link" href="https://violet47.substack.com" target="_blank" rel="noopener" aria-label="Read my writings on Substack">
+        <audio ref={audioRef} src={SONG_URL} preload="metadata" onTimeUpdate={onTime} onError={() => setHasSong(false)} loop />
+        <button
+          className={playing ? 'vinyl-link playing' : 'vinyl-link'}
+          onClick={toggleSong}
+          aria-label={hasSong ? (playing ? 'Pause the record' : 'Play a ten second taste') : 'Read my writings on Substack'}
+        >
           <div className="vinyl" aria-hidden="true"></div>
-        </a>
+        </button>
         <div className="album-cover">
           <button className="cover-canvas" onClick={() => setZoomed(true)} aria-label="View the album art full size">
             <img src={coverArt} alt="Watercolor illustration of a girl in a red cloak meeting a towering wolf in a misty forest" loading="lazy" />
@@ -84,7 +123,7 @@ export default function Beyond() {
           </a>
         </div>
       </div>
-      <p className="beyond-note">Spin the record to read &middot; tap the cover for a closer look</p>
+      <p className="beyond-note">Play the record for a taste &middot; the sleeve takes you to substack &middot; tap the cover to look closer</p>
       <div
         className={zoomed ? 'lightbox open' : 'lightbox'}
         role="dialog"
