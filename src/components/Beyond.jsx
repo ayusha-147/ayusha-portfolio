@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import coverArt from '../assets/red-and-wolf.jpg'
 
 const CLIP_SECONDS = 10
+// public/song.mp3: "Acoustic Guitar Ballad" via Pixabay (royalty-free license)
+// https://pixabay.com/music/acoustic-group-acoustic-guitar-ballad-304285/
 const SONG_URL = import.meta.env.BASE_URL + 'song.mp3'
 
 const NOTES = [
