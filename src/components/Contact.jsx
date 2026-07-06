@@ -10,6 +10,7 @@ export default function Contact() {
           <a href="mailto:ayushapradhananga07@gmail.com">Email</a>
           <a href="https://linkedin.com/in/ayusha-pradhananga" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/ayusha-147" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://violet47.substack.com" target="_blank" rel="noopener">Substack</a>
           <a href="resume.pdf">Resume</a>
         </div>
       </div>
