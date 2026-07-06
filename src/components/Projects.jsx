@@ -1,5 +1,14 @@
 const REPORTS = [
   {
+    code: 'LMS-01 · BUILD + QA',
+    status: 'ONGOING QA',
+    statusClass: 'status wip',
+    scope: 'Learning platform · Courses · Assessments · Enrollment',
+    title: 'Learning Management System',
+    body: 'Ongoing professional project where I work both sides of the build: shaping requirements and user workflows, building frontend screens, and configuring course content, then running continuous QA passes across lesson upload, quiz and grading flows, and role-based enrollment. Client details kept confidential.',
+    deliv: ['Workflow Specs', 'Frontend UI', 'Test Cases', 'Regression Cycles'],
+  },
+  {
     code: 'TR-01 · MANUAL QA',
     status: 'PASS',
     scope: 'HR platform · Onboarding · Leave · Payroll',
@@ -43,7 +52,7 @@ export default function Projects() {
         <div className="report-grid">
           {REPORTS.map((r, i) => (
             <article className="report reveal" key={i}>
-              <div className="report-head"><span>{r.code}</span><span className="status pass">{r.status}</span></div>
+              <div className="report-head"><span>{r.code}</span><span className={r.statusClass || 'status pass'}>{r.status}</span></div>
               <div className="report-body">
                 <span className="scope">{r.scope}</span>
                 <h3>{r.title}</h3>
