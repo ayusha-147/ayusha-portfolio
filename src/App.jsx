@@ -65,11 +65,11 @@ export default function App() {
       <Hero />
       <About />
       <DuneDivider background="var(--bg-alt)" fill="var(--bg-alt2)"
-        d="M0 60 C 280 16 520 82 820 50 C 1080 24 1280 70 1440 46 L1440 96 L0 96 Z" />
+        d="M0 118 C 220 96 460 126 700 106 C 940 90 1180 122 1440 100 L1440 130 L0 130 Z" />
       <Journey />
       <Skills />
       <DuneDivider background="var(--bg-alt2)" fill="var(--bg-alt)"
-        d="M0 52 C 260 88 540 22 840 58 C 1100 86 1290 36 1440 62 L1440 96 L0 96 Z" />
+        d="M0 104 C 220 126 460 92 700 116 C 940 128 1180 96 1440 112 L1440 130 L0 130 Z" />
       <Projects />
       <Certs onOpen={openLightbox} />
       <Lightbox {...lightbox} onClose={closeLightbox} />
