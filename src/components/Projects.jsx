@@ -11,9 +11,9 @@ const REPORTS = [
   {
     code: 'TR-01 · MANUAL QA',
     status: 'PASS',
-    scope: 'HR platform · Onboarding · Leave · Payroll',
-    title: 'Vyaguta HR Management System',
-    body: 'Validated core HR workflows before release. Reviewed requirements, designed 40+ structured test cases with requirement traceability, then executed manual and exploratory passes. Defects logged in JIRA with severity, priority, and full reproduction steps.',
+    scope: 'Employee management · Onboarding · Leave · Payroll',
+    title: 'Employee Management System',
+    body: 'Validated core employee workflows before release. Reviewed requirements, prepared a complete test plan, and designed 40+ structured test cases with requirement traceability, then executed manual and exploratory passes. Defects logged in JIRA with severity, priority, and full reproduction steps.',
     deliv: ['Test Plan', '40+ Test Cases', 'Defect Report', 'JIRA'],
   },
   {
@@ -25,15 +25,7 @@ const REPORTS = [
     deliv: ['Test Plan', 'Executed Cases', 'Summary Report'],
   },
   {
-    code: 'TR-03 · MANUAL QA',
-    status: 'PASS',
-    scope: 'Employee management · Core workflows',
-    title: 'Employee Management System',
-    body: 'Prepared a complete test plan covering scope, objectives, and strategy, then designed structured test cases validating employee management workflows and user scenarios.',
-    deliv: ['Test Plan', 'Test Cases', 'User Scenarios'],
-  },
-  {
-    code: 'TR-04 · AUTOMATION',
+    code: 'TR-03 · AUTOMATION',
     status: 'PASS',
     scope: 'UI · API · Performance',
     title: 'Automation Practice Suite',
