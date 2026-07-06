@@ -1,10 +1,13 @@
 import { useMemo } from 'react'
+import coverArt from '../assets/red-and-wolf.jpg'
 
-const TRACKS = [
-  { n: '01', name: 'stray thoughts, kept' },
-  { n: '02', name: 'notes from the QA trenches' },
-  { n: '03', name: 'letters I won’t send' },
-  { n: '04', name: 'everything else, eventually' },
+const NOTES = [
+  { ch: '♪', left: '30%', bottom: '30%', delay: '0s', dur: '9s', size: '17px' },
+  { ch: '♫', left: '40%', bottom: '24%', delay: '2.5s', dur: '11s', size: '14px' },
+  { ch: '♪', left: '52%', bottom: '32%', delay: '5s', dur: '10s', size: '19px' },
+  { ch: '♩', left: '61%', bottom: '26%', delay: '1.2s', dur: '12s', size: '13px' },
+  { ch: '♫', left: '69%', bottom: '31%', delay: '6.8s', dur: '9.5s', size: '16px' },
+  { ch: '♪', left: '46%', bottom: '20%', delay: '8.2s', dur: '10.5s', size: '15px' },
 ]
 
 export default function Beyond() {
@@ -33,6 +36,11 @@ export default function Beyond() {
           <span className="star" key={i} style={style} />
         ))}
       </div>
+      <div className="beyond-notes" aria-hidden="true">
+        {NOTES.map((n, i) => (
+          <span key={i} style={{ left: n.left, bottom: n.bottom, animationDelay: n.delay, animationDuration: n.dur, fontSize: n.size }}>{n.ch}</span>
+        ))}
+      </div>
       <a className="beyond-balloon-link" href="#/" aria-label="Float back to the portfolio">
         <svg className="beyond-balloon" viewBox="0 0 60 90" aria-hidden="true">
           <path d="M30 4c-14 0-24 10-24 24 0 16 16 26 20 34h8c4-8 20-18 20-34 0-14-10-24-24-24z" />
@@ -49,13 +57,10 @@ export default function Beyond() {
       <a className="album" href="https://violet47.substack.com" target="_blank" rel="noopener" aria-label="Read my writing on Substack">
         <div className="vinyl" aria-hidden="true"></div>
         <div className="album-cover">
-          <div className="cover-head"><strong>violet47</strong><span>a side project in words</span></div>
-          <ol className="tracklist">
-            {TRACKS.map(t => (
-              <li key={t.n}><span>{t.n}</span>{t.name}</li>
-            ))}
-          </ol>
-          <div className="cover-foot"><span>SIDE A</span><span>33&#8531; RPM &middot; &#8734; MIN</span></div>
+          <div className="cover-canvas">
+            <img src={coverArt} alt="Watercolor illustration of a girl in a red cloak meeting a towering wolf in a misty forest" loading="lazy" />
+          </div>
+          <div className="cover-text"><strong>violet47</strong><span>essays · on substack</span></div>
         </div>
       </a>
       <p className="beyond-note">Spin the record to read &middot; side A is always live</p>
