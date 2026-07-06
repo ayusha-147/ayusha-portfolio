@@ -11,6 +11,7 @@ import Lightbox from './components/Lightbox.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import Beyond from './components/Beyond.jsx'
+import BackToTop from './components/BackToTop.jsx'
 
 export default function App() {
   // hash route: the hero balloon carries you to #/beyond
@@ -92,6 +93,7 @@ export default function App() {
       <Lightbox {...lightbox} onClose={closeLightbox} />
       <Contact />
       <Footer />
+      <BackToTop />
     </>
   )
 }
