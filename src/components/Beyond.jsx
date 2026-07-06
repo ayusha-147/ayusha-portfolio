@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import coverArt from '../assets/red-and-wolf.jpg'
 
 const NOTES = [
@@ -29,6 +29,23 @@ export default function Beyond() {
     })
   }, [])
 
+  const [zoomed, setZoomed] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = zoomed ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [zoomed])
+
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape' && zoomed) setZoomed(false)
+    }
+    addEventListener('keydown', onKey)
+    return () => removeEventListener('keydown', onKey)
+  }, [zoomed])
+
   return (
     <main className="beyond">
       <div className="sky beyond-sky" aria-hidden="true">
@@ -54,16 +71,28 @@ export default function Beyond() {
         <h2 className="beyond-title">where the words land</h2>
         <p className="beyond-lede">By day I break software. By night the findings get filed somewhere softer.</p>
       </div>
-      <a className="album" href="https://violet47.substack.com" target="_blank" rel="noopener" aria-label="Read my writing on Substack">
-        <div className="vinyl" aria-hidden="true"></div>
+      <div className="album">
+        <a className="vinyl-link" href="https://violet47.substack.com" target="_blank" rel="noopener" aria-label="Read my writings on Substack">
+          <div className="vinyl" aria-hidden="true"></div>
+        </a>
         <div className="album-cover">
-          <div className="cover-canvas">
+          <button className="cover-canvas" onClick={() => setZoomed(true)} aria-label="View the album art full size">
             <img src={coverArt} alt="Watercolor illustration of a girl in a red cloak meeting a towering wolf in a misty forest" loading="lazy" />
-          </div>
-          <div className="cover-text"><strong>violet47</strong><span>essays · on substack</span></div>
+          </button>
+          <a className="cover-text" href="https://violet47.substack.com" target="_blank" rel="noopener">
+            <strong>violet47</strong><span>writings · on substack</span>
+          </a>
         </div>
-      </a>
-      <p className="beyond-note">Spin the record to read &middot; side A is always live</p>
+      </div>
+      <p className="beyond-note">Spin the record to read &middot; tap the cover for a closer look</p>
+      <div
+        className={zoomed ? 'lightbox open' : 'lightbox'}
+        role="dialog"
+        aria-label="Full size album art"
+        onClick={() => setZoomed(false)}
+      >
+        <img src={coverArt} alt="Watercolor illustration of a girl in a red cloak meeting a towering wolf in a misty forest, full size" />
+      </div>
     </main>
   )
 }
